@@ -1,0 +1,2 @@
+This project is a beta version of a JavaScript library conceived with the goal to build graphical representations of numeric values.
+A short article introducing the project with also examples is available on my blog on www.pbosquet.info. 
