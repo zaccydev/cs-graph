@@ -56,7 +56,7 @@ CsgDrawLine = function(graph) {
 		init = 0;
 		while (graph.rData.hasNext()) {
 		    var nextK = graph.rData.currentKey();		
-		    if (init == 0 && i > 0) {				
+		    if (init === 0 && i > 0) {				
 			ctx.moveTo(graph.getMX(nextK), graph.getMY(graph.rData.currentVal(i)));
 			init++;
 		    }
@@ -97,7 +97,7 @@ CsgDrawLine = function(graph) {
 	var rowPaddingR = 1;
 	graph.rData.reset();
 	var nbBar = 0;
-	for (_row in graph.options.rows) {
+	for (var _row in graph.options.rows) {
 	    if (graph.options.rows[_row].type == 'bar')
 		nbBar++;
 	}
@@ -109,7 +109,7 @@ CsgDrawLine = function(graph) {
 	    if (nbBar % 2 == 1) {
 		xPos -= barWidth/2;		
 	    }
-	    if (barNumber % 2 == 0) {
+	    if (barNumber % 2 === 0) {
 		xPos  += barWidth * rowNumber/2;
 	    } else {
 		xPos  -= barWidth;

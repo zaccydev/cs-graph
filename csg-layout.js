@@ -25,18 +25,18 @@ var CsgLayout = function(graph) {
     };
 
     writeHorizontalNumbers = function(number, Y, ctx) {
-	number = graph.options["layoutYLineMatch"] ? round2Gr(number) : round1Gr(number);
+	number = graph.options['layoutYLineMatch'] ? round2Gr(number) : round1Gr(number);
 	ctx.textAlign = "right";
 	writeNumber(round2Gr(number), 35 ,Y+5, ctx);
-    }
+    };
     writeVerticalNumbers = function(number, X, ctx) {			
 	ctx.textAlign = "right";
 	writeNumber(round2Gr(number), X+1, -1* graph.getMarginSize("b")+26, ctx);		
-    }		
+    };		
     writeNumber = function(number, X, Y, ctx) {
 	ctx.font = cFont;		
 	ctx.fillText(number, X ,Y);
-    }
+    };
 
     writeVLines = function (ctx) {
 	// pour les lignes x (verticale) on utilise le nombre de cellules pour déterminer le nombre de ligne

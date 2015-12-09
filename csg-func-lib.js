@@ -31,7 +31,7 @@ function clearCanvas(canvas, context) {
 
 
 Array.prototype.contains = function(val) {
-    for (k in this) if (this[k] == val) return true;
+    for (var k in this) if (this[k] == val) return true;
     return false;
 };
 
