@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>csg test (json data source)</title>	
+    <meta charset="utf-8">
+    <script src="lib/jquery-min.1.11.2.js"></script>
+    <script src="lib/parse_csv.js"></script>
+    <script src="./test_it_2.js"></script>
+    <script src="./csg-func-lib.js"></script>	
+    <script src="./csg-draw-line.js"></script>	
+    <script src="./csg-layout.js"></script>	
+    <script src="./csg-model.js"></script>	
+    <script src="./csg.js"></script>	
+    <link rel="stylesheet" type="text/css" href="./lib/bootstrap.min.css" />    
+    <link rel="stylesheet" type="text/csv" href="./testcsv.csv" /> 
+
+    <style>
+      body, canvas, div {
+        padding: 0;
+        margin: 0;				
+      }	
+      *::before, *::after {
+        box-sizing: border-box;
+      }
+      div.cs-graph {
+        padding : 15px;
+      }
+      div.cs-graph canvas {
+        background-color: #fcfce8;
+        border: 1px solid #333;
+        border-radius: 30px;
+      }	
+      table {
+        width: 50%;        
+      }
+    </style>
+  </head>
+  <body>
+  <!--  <div class="container-fluid"><div class="row"><div class="col-xs-12">-->
+
+    <div class="cs-graph" data-csg='{"xValueInterpretation": false, "rows":{"1":{"type":"point"}}}' >
+      <table class="table table-hover table-striped table-condensed">
+	<tr>
+	  <th>0</th><th>1</th><th>4</th><th>6</th>
+	</tr>
+	<tr>
+	  <td>25</td><td>20</td><td>17</td><td>15</td>
+	</tr>
+
+	<tr>
+	  <td>10</td><td>30</td><td>35</td><td>32</td>
+	</tr>		
+      </table>
+      <canvas></canvas>  	
+    </div> 
+
+    <div class="cs-graph" data-csg='{"firstCellTh":true, "rows":{"0":{"color":"blue","type":"dotted-line"}}}'  
+	 data-csg-json='{"axeX": {"name":"numéro", "values": [1,2,8,9,11]}, "data": [{"name":"Freq", "values":[10,50,-10,20,15]}, {"name":"Dist", "values":[-10,20,35,10,15] }] }' >
+      <canvas></canvas>  	
+    </div>
+
+    <div  class='cs-graph' data-csg='{"width":"380","height":"240", "barWidth":"10", "graphMargin":[20, 55, 30, 70], "firstCellTh":true, "layoutYLineMatch":true, "xValueInterpretation":false,"rows":{"0":{ "type":"bar"}, "1":{"color":"pink", "type":"bar"}, "2":{"type":"bar", "color":"#98fb98"}, "3":{"type":"bar", "color":"green"}, "4":{"type":"bar"},"5":{"color":"red", "type":"line", "lineWidth":"2"}}}' data-csg-json='{"axeX":{"values":[0,3,4,6]},"data":[{"name":"GM500","values":[0,20,5,0]},{"name":"GM350","values":[0,35,7,0]}]}'><canvas></canvas></div>
+
+
+   <div  class='cs-graph' data-csg='{"width":"380","height":"240", "barWidth":"10", "graphMargin":[20, 55, 30, 70], "firstCellTh":true, "layoutYLineMatch":true, "spacerMode":true, "xValueInterpretation":false,"rows":{"0":{ "type":"bar"}, "1":{"color":"pink", "type":"bar"}, "2":{"type":"bar", "color":"#98fb98"}, "3":{"type":"bar", "color":"green"}, "4":{"type":"bar"},"5":{"color":"red", "type":"line", "lineWidth":"2"}}}' data-csg-json='{"axeX":{"values":[-3,4]},"data":[{"name":"GM500","values":[-20,5]},{"name":"GM350","values":[35,7]}]}'><canvas></canvas></div>
+
+  </body>
+</html>
